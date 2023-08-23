@@ -34,15 +34,15 @@ export class Register{
         cy.get(this.createAccountButton).click();
     }
 
-    validateSucessMessage(successtext:string,headertext:string,contactdetails:string){
-        cy.get(this.successMessage).should('be.visible').and('exist').invoke('text').as('successtext');
-        cy.get('@successtext').should('contain',successtext);
+    verifySucessMessage(){
+        return cy.get(this.successMessage);
+    }
 
-        cy.get(this.myAccountHeading).should('be.visible').and('exist').invoke('text').as('accountHeading');
-        cy.get('@accountHeading').should('contain',headertext);
+    verifyAccountHeading(){
+        return cy.get(this.myAccountHeading);
+    }
 
-        cy.get(this.contactdetails).should('be.visible').invoke('text').as('contact');
-        cy.get('@contact').should('contain',contactdetails);
-
-    }  
+    verifyContactDetails(){
+        return cy.get(this.contactdetails)
+    }
 }
