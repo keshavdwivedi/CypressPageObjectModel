@@ -1,0 +1,30 @@
+{
+  "name": "lumastore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "delete-reportFolder": "rm -rf cypress/reports/",
+    "delete-screenshots":"rm -rf cypress/screenshots/",
+    "delete-videos":"rm -rf cypress/videos/",
+    "clean":"npm run delete-reportFolder && npm run delete-screenshots && npm run delete-videos",
+    "test": "npx cypress run --e2e --browser chrome ",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "chrometest": "npx cypress run --headed --spec=cypress/e2e/**/*.spec.cy.ts --browser chrome",
+    "tagtesting": "npx cypress run -e TAGS='@E2ENaveenAutomationLabs' --e2e --browser chrome  --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
+"dependencies": {
+  "typescript": "5.1.6"
+},
+
+"devDependencies": {
+ "cypress": "^12.17.4",
+ "cypress-mochawesome-reporter": "^3.5.1"
+}
+
+}
